@@ -1,0 +1,29 @@
+{
+  "name": "generators-talk",
+  "version": "1.0.0",
+  "description": "Useful ideas on generators",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && node index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tvedtorama/generators-talk.git"
+  },
+  "author": "Jørgen Tvedt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tvedtorama/generators-talk/issues"
+  },
+  "homepage": "https://github.com/tvedtorama/generators-talk#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "redux": "^4.0.1",
+    "redux-saga": "^0.16.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.16.0"
+  }
+}
