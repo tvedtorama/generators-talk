@@ -3,6 +3,8 @@ import {default as createSagaMiddleware} from 'redux-saga'
 
 const sagaMiddleware = createSagaMiddleware()
 
-export const setupShop = () =>
-	createStore((s = {}) => s,
-		applyMiddleware(sagaMiddleware))
+export const setupShop = () => ({
+	store: createStore((s = {}) => s,
+		applyMiddleware(sagaMiddleware)),
+	sagaMiddleware
+})
