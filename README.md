@@ -75,7 +75,7 @@ const recursive = function*(seed = 10) {
 
 ```
 
-### Spreading into array
+### Spreading finite gen into array
 
 ```typescript
 const finite = function*(seed = 10) {
@@ -91,6 +91,15 @@ const finite = function*(seed = 10) {
 	console.log(arr)
 ```
 
+### Iterating in for loop
+
+```typescript
+	const gen = finite()
+
+	for (const val of gen) {
+		console.log(val)
+	}
+```
 
 ### init.ts - Sagas and Listen
 
