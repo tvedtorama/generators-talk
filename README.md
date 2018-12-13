@@ -64,6 +64,18 @@ const communicative = function*() {
 **Issue** Note the inconsitency in the first iteration.
 **Issue** Mutable state
 
+### Recursive
+
+```typescript
+
+const recursive = function*(seed = 10) {
+	yield seed
+	yield* recursive(seed + 1)
+}
+
+```
+
+
 ### init.ts - Sagas and Listen
 
 ```typescript
