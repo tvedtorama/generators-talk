@@ -13,12 +13,6 @@ npm install
 npm start
 ```
 
-### CURLing Greets
-
-```
-curl -X POST http://127.0.0.1:5555/greeting --data '{"greeting":"Heisann"}' --header "Content-Type: application/json" -w "\n"
-```
-
 ## Elements of the Talk
 
 
@@ -126,4 +120,12 @@ const finite = function*(seed = 10) {
 	})
 
 	// Look at `greetingLoop` for the actual content.
+```
+
+## Usage
+
+### CURLing Greets
+
+```
+curl -X POST http://127.0.0.1:5555/greeting --data '{"greeting":"Heisann"}' --header "Content-Type: application/json" -w "\n"
 ```
