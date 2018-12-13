@@ -13,6 +13,8 @@ npm install
 npm start
 ```
 
+**Note:** Nothing useful will happen when you run the code, until you have pasted in the demo code.
+
 ## Elements of the Talk
 
 
