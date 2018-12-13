@@ -22,6 +22,27 @@ curl -X POST http://127.0.0.1:5555/greeting --data '{"greeting":"Heisann"}' --he
 ## Elements of the Talk
 
 
+### Generic iteration
+```typescript 
+
+const gloriousStateful = function*(seed = 10) {
+	let state = seed
+
+	while (true) {
+		yield ++state
+	}
+}
+
+	// Using it
+	const gen = gloriousStateful()
+
+	for (const i of Iterable.range(0, 4)) {
+		const {value, done} = gen.next()
+		console.log(`Got value: ${value} done: ${done}`)
+	}
+
+```
+
 ### init.ts - Sagas and Listen
 
 ```typescript
@@ -33,3 +54,5 @@ curl -X POST http://127.0.0.1:5555/greeting --data '{"greeting":"Heisann"}' --he
 		app.use("/", router)
 	})
 ```
+
+
