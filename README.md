@@ -75,6 +75,22 @@ const recursive = function*(seed = 10) {
 
 ```
 
+### Spreading into array
+
+```typescript
+const finite = function*(seed = 10) {
+	yield seed
+	if (seed < 12) {
+		yield* finite(seed + 1)
+	}
+}
+
+	const gen = finite()
+
+	const arr = [...gen]
+	console.log(arr)
+```
+
 
 ### init.ts - Sagas and Listen
 
