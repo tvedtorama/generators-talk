@@ -1,3 +1,3 @@
-const index = require('./build/lib/index')
+const index = require('./build/index')
 
 index.default()
