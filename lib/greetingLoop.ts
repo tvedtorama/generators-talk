@@ -3,7 +3,18 @@ import { GREET, IGreetAction } from "./actions/greets";
 import { delay } from "redux-saga";
 import * as colors from 'colors/safe'
 
-export const mainLoop = function*() {
+const logStatus = (greets: string[]) => {
+	console.log(colors.dim(`Greets recieved so far:`))
+	if (greets.length === 0) {
+		console.log(colors.red("None"))
+	} else {
+		for (const greet of greets) {
+			console.log(colors.green(" * ") + greet)
+		}
+	}
+}
+
+export const greetingLoop = function*() {
 	// Our state
 	let greets: string[] = []
 
@@ -19,14 +30,7 @@ export const mainLoop = function*() {
 			greets.push(action.greetAction.payload.greeting)
 		} else {
 			// Timeout.  Display the list of greets received so far.
-			console.log(colors.dim(`Greets recevied so far:`))
-			if (greets.length === 0) {
-				console.log(colors.red("None"))
-			} else {
-				for (const greet of greets) {
-					console.log(colors.green(" * ") + greet)
-				}
-			}
+			logStatus(greets)
 		}
 	}
 

@@ -1,13 +1,13 @@
 import { listen } from "./listen";
 import { setupShop } from "./createStore";
 import { createRouter } from "./routing";
-import { mainLoop } from "./mainLoop";
+import { greetingLoop } from "./greetingLoop";
 
 export default () => {
 	console.log("hello")
 
 	const {store, sagaMiddleware} = setupShop()
-	sagaMiddleware.run(mainLoop)
+	sagaMiddleware.run(greetingLoop)
 	const router = createRouter(store)
 
 	listen(app => {
