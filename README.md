@@ -101,6 +101,19 @@ const finite = function*(seed = 10) {
 	}
 ```
 
+### Using Ixjs to Achieving Gloriousness
+
+```typescript
+	const gen = finite()
+	const iter = Iterable.from(gen)
+
+	for (const val of iter.filter(x => x > 10).take(1)) {
+		console.log(val)
+	}
+
+	// Tip: add a log statement to the inner loop of `finite` to see how many times it actually runs.
+```
+
 ### init.ts - Sagas and Listen
 
 ```typescript
@@ -111,6 +124,6 @@ const finite = function*(seed = 10) {
 	listen(app => {
 		app.use("/", router)
 	})
+
+	// Look at `greetingLoop` for the actual content.
 ```
-
-
