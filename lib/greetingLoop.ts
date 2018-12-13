@@ -21,13 +21,13 @@ export const greetingLoop = function*() {
 	while (true) {
 		// Listen for new greets, or timeout to show status.
 		// This is done by `yield`ing to the Redux Saga framework
-		const action: {greetAction: IGreetAction, timeout: any} = yield race({
+		const action: {greet: IGreetAction, timeout: any} = yield race({
 				greet: take(GREET),
 				timeout: delay(2000)
 			})
-		if (action.greetAction) {
+		if (action.greet) {
 			// We received a new greeting!  Add it to the list:
-			greets.push(action.greetAction.payload.greeting)
+			greets.push(action.greet.payload.greeting)
 		} else {
 			// Timeout.  Display the list of greets received so far.
 			logStatus(greets)
