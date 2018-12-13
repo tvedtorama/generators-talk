@@ -127,5 +127,5 @@ const finite = function*(seed = 10) {
 ### CURLing Greets
 
 ```
-curl -X POST http://127.0.0.1:5555/greeting --data '{"greeting":"Heisann"}' --header "Content-Type: application/json" -w "\n"
+curl -X POST http://127.0.0.1:3000/greeting --data '{"greeting":"Heisann"}' --header "Content-Type: application/json" -w "\n"
 ```
