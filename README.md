@@ -43,6 +43,27 @@ const gloriousStateful = function*(seed = 10) {
 
 ```
 
+### Passing Values to the Generator
+
+```typescript
+const communicative = function*() {
+	let value = 99
+	while (true) {
+		value = yield value + 10
+	}
+}
+
+	const gen = communicative()
+
+	for (const i of Iterable.range(0, 4)) {
+		const {value, done} = gen.next(i)
+		console.log(`Got value: ${value} done: ${done}`)
+	}
+```
+
+**Issue** Note the inconsitency in the first iteration.
+**Issue** Mutable state
+
 ### init.ts - Sagas and Listen
 
 ```typescript
